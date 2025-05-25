@@ -1,12 +1,45 @@
-# React + Vite
+# React Login + Dashboard App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple **React-based login and dashboard app** built as part of an assignment. It allows users to log in with a dummy email/password, fetches data from a public API (PokeAPI), and displays it beautifully in a card layout.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features
 
-## Expanding the ESLint configuration
+### Login Screen
+- Accepts any valid email and a password (min 8 characters)
+- Dummy login (no real backend)
+- Saves login state in `localStorage`
+- Redirects to dashboard upon successful login
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+###  Dashboard Screen
+- Fetches a list of Pokémon from [PokeAPI](https://pokeapi.co/)
+- Displays each Pokémon in a card with:
+  - Image
+  - Name
+  - Height
+  - Type(s)
+- Shows user's first email initial in a badge
+- Logout button to clear login state and return to login screen
+
+---
+
+## Tech Stack
+
+- **Frontend**: React
+- **Styling**: Tailwind CSS
+- **Routing**: React Router DOM
+- **API Handling**: Axios
+- **State Management**: React Hooks (`useState`, `useEffect`)
+- **Storage**: `localStorage`
+
+---
+
+##  Screenshots
+
+> *(Optional: Add screenshots here if you want to impress.)*
+
+---
+
+## Folder Structure
+
