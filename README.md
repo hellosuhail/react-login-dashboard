@@ -33,13 +33,6 @@ This is a simple **React-based login and dashboard app** built as part of an ass
 - **State Management**: React Hooks (`useState`, `useEffect`)
 - **Storage**: `localStorage`
 
----
-
-##  Screenshots
-
-> *(Optional: Add screenshots here if you want to impress.)*
-
----
 
 ## Folder Structure
 
