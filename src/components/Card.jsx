@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Card = ({ pokemon }) => {
+const Card = ({ pokemon ,index}) => {
 
     return (
         <div>
-            <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition flex flex-col items-center" >
+            <div className="bg-white  rounded-xl w-44 shadow-md p-4 hover:shadow-lg transition flex flex-col items-center"  key={index}>
 
                 <img src={pokemon.sprites.front_default} alt={pokemon.name} className="w-20 h-20" />
 
