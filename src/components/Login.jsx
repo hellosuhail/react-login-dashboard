@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { LuEyeClosed } from "react-icons/lu";
 import { LuEye } from "react-icons/lu";
 import { useNavigate } from 'react-router-dom';
+import { poki } from '../App';
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = ( ) => {
   const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  const loggedIn=useContext(poki)
 
   const handleLogin = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -27,12 +31,13 @@ const Login = ({ setIsLoggedIn }) => {
     }
 
     const user = {
+      name:name,
       email: email,
       loggedIn: true
     }
     localStorage.setItem('user', JSON.stringify(user));
 
-    setIsLoggedIn(true);
+    loggedIn.setIsLoggedIn(true);
     navigate('/dashboard');
   };
 
@@ -42,8 +47,19 @@ const Login = ({ setIsLoggedIn }) => {
 
   return (
     <div className="flex items-center justify-center min-h-screen px-4 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
-      <div className="md:w-full max-w-md bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+      <div className="md:w-full max-w-md bg-white text-black p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
         <h2 className="text-4xl font-bold text-center text-indigo-600 mb-8">Welcome</h2>
+
+         <label className="input-validator relative mb-6 block">
+          
+          <input
+            type="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="enter your name"
+            required
+            className="w-full pl-4 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 focus:outline-none"/>
+        </label>
 
 
         <label className="input-validator relative mb-6 block">
@@ -61,8 +77,7 @@ const Login = ({ setIsLoggedIn }) => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="mail@site.com"
             required
-            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-          />
+            className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 focus:outline-none"/>
         </label>
         <div className="validator-hint hidden">Enter valid email address</div>
 
