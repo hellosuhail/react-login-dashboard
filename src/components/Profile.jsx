@@ -67,7 +67,7 @@ const UserProfile = () => {
           <p className="text-center text-gray-500 mt-3">
             Love photography travel and good coffee
           </p>
-          <p className="text-sm text-gray-400 mt-2">Melbourne, Australia</p>
+          <p className="text-sm text-gray-400 mt-2">GZB, Indai</p>
           <p className="text-sm text-gray-400">Joined March 2022</p>
         </div>
         <Link to='/dashboard' className="btn text-lg rounded-lg btn-primary w-full">back</Link>
